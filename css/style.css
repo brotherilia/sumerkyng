@@ -523,13 +523,11 @@ p {
   max-width: 900px;
   min-height: 80px;
 
-  text-align: right;
+  text-align: center;
 
   background-color: #000000;
 }
 .page-footer__text {
-  margin-right: 20px;
-
   font-weight: bold;
   font-size: 11px;
   line-height: 80px;
@@ -642,6 +640,12 @@ p {
   .container {
     border-right: 2px solid #33323a;
     border-left: 2px solid #33323a;
+  }
+  .page-footer {
+    text-align: right;
+  }
+  .page-footer__text {
+    margin-right: 20px;
   }
   .main-nav__items {
         flex-wrap: nowrap;
