@@ -426,20 +426,24 @@ th {
   padding: 0;
 }
 /***** CONCATENATION HERE! *****/
-html,
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html,
 body {
   margin: 0;
   padding: 0;
 }
 body {
-  min-width: 920px;
-
   font-size: 12px;
   line-height: 18px;
   font-family: sans-serif;
   color: #52454a;
-
-  background: #000000 url("../img/body-bg.jpg") no-repeat fixed top;
 }
 img {
   max-width: 100%;
@@ -471,53 +475,52 @@ p {
   background: #000000 url("../img/welcome-bg.jpg") no-repeat scroll top;
 }
 .container {
-  width: 900px;
-  margin: 0 auto;
+  width: auto;
+  min-width: 320px;
 
   background-color: #23222a;
-  border-right: 2px solid #33323a;
-  border-left: 2px solid #33323a;
 }
 .page-header {
-  width: 900px;
+  max-width: 900px;
   height: 290px;
 
   background: url("../img/header-bg.jpg") no-repeat scroll top;
 }
 .page-header__link {
   display: block;
-  width: 900px;
+  max-width: 900px;
   height: 290px;
 
   line-height: 0;
   text-decoration: none;
 }
 .page-main {
-  background: url("../img/main-bg.png") no-repeat scroll top;
-}
-.page-main::after {
-  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+      flex-wrap: wrap;
 
-  display: table;
-  clear: both;
+  background: url("../img/main-bg.png") no-repeat scroll top;
+
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -ms-flex-wrap: wrap;
 }
 .page-main__column {
-  float: left;
-  box-sizing: border-box;
-  width: 50%;
   padding: 20px;
 }
-.page-main__column--right {
-  float: right;
-
-  text-align: right;
-}
 .page-main__title {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+
   font-weight: normal;
   color: #8d777f;
 }
 .page-footer {
-  width: 900px;
+  max-width: 900px;
   min-height: 80px;
 
   text-align: right;
@@ -540,7 +543,6 @@ p {
   color: #838094;
 }
 .main-nav {
-  box-sizing: border-box;
   min-height: 25px;
   padding: 0 15px;
 }
@@ -557,38 +559,36 @@ p {
   background-image:         linear-gradient(to top, #000000, #23222a);
 }
 .main-nav__items {
-  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+      flex-wrap: wrap;
+  justify-content: center;
   margin: 0;
   padding: 0;
-  padding-right: 10px;
-  overflow: hidden;
 
   list-style: none;
-  font-size: 0;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -ms-flex-wrap: wrap;
 }
 .main-nav__item {
   position: relative;
 
-  display: inline-block;
-  padding-right: 20px;
+  margin-left: -1px;
+  padding-right: 10px;
+  padding-left: 10px;
 
   font-size: 14px;
-  vertical-align: top;
-}
-.main-nav__item::after {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: -12px;
 
-  width: 3px;
-  height: 3px;
-
-  background-color: #838094;
+  border-right: 1px solid #33323a;
+  border-left: 1px solid #33323a;
 }
 .main-nav__item:first-child::after {
+  display: none;
+}
+.main-nav__item--clone {
   display: none;
 }
 .main-nav__link {
@@ -603,6 +603,7 @@ p {
 .main-nav__link--active {
   display: block;
 
+  font-weight: bold;
   line-height: 20px;
   color: #838094;
   text-transform: uppercase;
@@ -611,4 +612,68 @@ p {
 }
 .main-nav__link:hover {
   color: #838094;
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .page-main {
+    -ms-flex-direction: row;
+        flex-direction: row;
+    justify-content: space-between;
+
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  }
+  .page-main__column:nth-child(even) {
+    text-align: right;
+  }
+  .page-main__column {
+    width: 50%;
+  }
+}
+@media (min-width: 900px) {
+  body {
+    background: #000000 url("../img/body-bg.jpg") no-repeat fixed top;
+  }
+  .container {
+    border-right: 2px solid #33323a;
+    border-left: 2px solid #33323a;
+  }
+  .main-nav__items {
+        flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-right: 10px;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -ms-flex-wrap: nowrap;
+  }
+  .main-nav__item {
+    padding-right: 20px;
+    padding-left: 0;
+
+    border: none;
+  }
+  .main-nav__item::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -12px;
+
+    width: 3px;
+    height: 3px;
+
+    background-color: #838094;
+  }
+  .main-nav__item--clone {
+    display: block;
+  }
 }
