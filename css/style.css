@@ -454,26 +454,6 @@ p {
   margin-bottom: 10px;
   padding: 0;
 }
-.body-welcome {
-  background: none;
-  background-color: #000000;
-}
-.body-welcome__link {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  min-width: 1024px;
-  min-height: 768px;
-  margin: auto;
-
-  line-height: 0;
-  text-decoration: none;
-
-  background: #000000 url("../img/welcome-bg.jpg") no-repeat scroll top;
-}
 .container {
   width: auto;
   min-width: 320px;
@@ -484,7 +464,7 @@ p {
   max-width: 900px;
   height: 290px;
 
-  background: url("../img/header-bg.jpg") no-repeat scroll top;
+  background: url("../img/bg-header.jpg") no-repeat scroll top;
 }
 .page-header__link {
   display: block;
@@ -502,22 +482,28 @@ p {
       flex-direction: column;
       flex-wrap: wrap;
 
-  background: url("../img/main-bg.png") no-repeat scroll top;
+  background: url("../img/bg-main.png") no-repeat scroll top;
 
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
   -ms-flex-wrap: wrap;
 }
 .page-main__column {
-  padding: 20px;
+  padding: 0 20px;
 }
 .page-main__title {
   margin: 0;
+  margin-top: 30px;
   margin-bottom: 10px;
   padding: 0;
 
   font-weight: normal;
   color: #8d777f;
+}
+.page-main__img {
+  margin-bottom: 20px;
+
+  box-shadow: 0 0 3px 0 #52454a;
 }
 .page-footer {
   max-width: 900px;
@@ -635,7 +621,7 @@ p {
 }
 @media (min-width: 900px) {
   body {
-    background: #000000 url("../img/body-bg.jpg") no-repeat fixed top;
+    background: #000000 url("../img/bg-body.jpg") no-repeat fixed top;
   }
   .container {
     border-right: 2px solid #33323a;
