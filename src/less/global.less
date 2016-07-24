@@ -1,7 +1,13 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 html,
 body {
-  margin: 0;
-  padding: 0;
+  .reset-spaces();
 }
 
 body {
@@ -9,8 +15,10 @@ body {
   font-size: 12px;
   line-height: 18px;
   color: #52454A;
-  background: #000000 url("../img/body-bg.jpg") no-repeat fixed top;
-  min-width: 920px;
+
+  @media @desktop-widths {
+    background: #000000 url("../img/bg-body.jpg") no-repeat fixed top;
+  }
 }
 
 img {
@@ -19,7 +27,6 @@ img {
 }
 
 p {
-  margin: 0;
-  padding: 0;
+  .reset-spaces();
   margin-bottom: 10px;
 }

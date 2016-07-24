@@ -1,13 +1,28 @@
 .page-header {
-  width: 900px;
+  max-width: 900px;
   height: 290px;
-  background: url("../img/header-bg.jpg") no-repeat scroll top;
+  padding-top: 40px;
+  background: url("../img/bg-header.jpg") no-repeat scroll top;
 
-  &__link {
+  @media @tablet-widths {
+    padding-top: 60px;
+  }
+
+  &__logo {
     display: block;
-    width: 900px;
-    height: 290px;
+    width: 250px;
+    height: 86px;
     line-height: 0;
-    text-decoration: none;
+    margin: 0 auto;
+    cursor: default;
+
+    @media @tablet-widths {
+      width: 390px;
+      height: 134px;
+    }
+
+    @media @desktop-widths {
+      cursor: pointer;
+    }
   }
 }

@@ -1,9 +1,11 @@
-.clearfix() {
-  &::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+.reset-spaces() {
+  margin: 0;
+  padding: 0;
+}
+
+.reset-list() {
+  .reset-spaces();
+  list-style: none;
 }
 
 .dots() {
@@ -11,5 +13,4 @@
   overflow: hidden;
   text-overflow: ellipsis;
   padding-right: 10px;
-  box-sizing: border-box;
 }

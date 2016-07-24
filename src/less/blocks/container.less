@@ -1,7 +1,15 @@
 .container {
-  width: 900px;
-  margin: 0 auto;
+  width: auto;
+  min-width: 320px;
   background-color: #23222A;
-  border-left: 2px solid #33323A;
-  border-right: 2px solid #33323A;
+
+  @media @tablet-widths {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  @media @desktop-widths {
+    border-left: 2px solid #33323A;
+    border-right: 2px solid #33323A;
+  }
 }
