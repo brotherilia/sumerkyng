@@ -463,16 +463,17 @@ p {
 .page-header {
   max-width: 900px;
   height: 290px;
+  padding-top: 40px;
 
   background: url("../img/bg-header.jpg") no-repeat scroll top;
 }
-.page-header__link {
+.page-header__logo {
   display: block;
-  max-width: 900px;
-  height: 290px;
+  width: 250px;
+  height: 86px;
+  margin: 0 auto;
 
   line-height: 0;
-  text-decoration: none;
 }
 .page-main {
   display: -webkit-box;
@@ -481,6 +482,7 @@ p {
   -ms-flex-direction: column;
       flex-direction: column;
       flex-wrap: wrap;
+  padding-bottom: 20px;
 
   background: url("../img/bg-main.png") no-repeat scroll top;
 
@@ -601,6 +603,13 @@ p {
   .container {
     max-width: 900px;
     margin: 0 auto;
+  }
+  .page-header {
+    padding-top: 60px;
+  }
+  .page-header__logo {
+    width: 390px;
+    height: 134px;
   }
   .page-main {
     -ms-flex-direction: row;
