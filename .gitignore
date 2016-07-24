@@ -1,0 +1,6 @@
+.grunt/
+build/
+node_modules/
+*.sublime*
+*.psd
+*.ai

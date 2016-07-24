@@ -1,0 +1,45 @@
+{
+  "name": "Sumerkyng",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sumerkyng",
+  "author": "Ilya Menshikov",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:brotherilia/sumerkyng.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brotherilia/sumerkyng"
+  },
+  "homepage": "https://brotherilia.github.io/sumerkyng/",
+  "devDependencies": {
+    "autoprefixer": "6.3.3",
+    "css-mqpacker": "4.0.1",
+    "editorconfig-tools": "0.1.1",
+    "grunt": "0.4.5",
+    "grunt-browser-sync": "2.2.0",
+    "grunt-contrib-clean": "1.0.0",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-imagemin": "1.0.1",
+    "grunt-contrib-less": "1.2.0",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-csscomb": "3.1.0",
+    "grunt-csso": "0.8.2",
+    "grunt-gh-pages": "1.1.0",
+    "grunt-postcss": "0.7.2",
+    "load-grunt-tasks": "3.4.1"
+  },
+  "scripts": {
+    "test": "editorconfig-tools check *",
+    "build": "grunt build",
+    "start": "npm run build && grunt serve",
+    "pages": "npm run build && grunt gh-pages"
+  },
+  "engines": {
+    "node": "5.0.0"
+  },
+  "dependencies": {
+    "time-grunt": "1.3.0"
+  }
+}
